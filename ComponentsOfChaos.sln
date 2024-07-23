@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComponentsOfChaos", "src\ComponentsOfChaos\ComponentsOfChaos.csproj", "{964ECE17-C67E-40AC-BA78-295124CE2B41}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{40A96289-FB00-4EEA-9B68-C56816B2DF94}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".tools", ".tools", "{81D4490F-38D3-4424-A273-BEA78D3809FF}"
+	ProjectSection(SolutionItems) = preProject
+		package.json = package.json
+		tailwind.config.js = tailwind.config.js
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{964ECE17-C67E-40AC-BA78-295124CE2B41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{964ECE17-C67E-40AC-BA78-295124CE2B41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{964ECE17-C67E-40AC-BA78-295124CE2B41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{964ECE17-C67E-40AC-BA78-295124CE2B41}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{964ECE17-C67E-40AC-BA78-295124CE2B41} = {40A96289-FB00-4EEA-9B68-C56816B2DF94}
+	EndGlobalSection
+EndGlobal

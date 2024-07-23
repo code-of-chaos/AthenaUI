@@ -1,0 +1,33 @@
+﻿@* ------------------------------------------------------------------------------------------------------------------ *@
+@* Imports
+@* ------------------------------------------------------------------------------------------------------------------ *@
+@namespace ComponentsOfChaos
+@* ------------------------------------------------------------------------------------------------------------------ *@
+@* Descriptors
+@* ------------------------------------------------------------------------------------------------------------------ *@
+@inherits ComponentBase;
+@* ------------------------------------------------------------------------------------------------------------------ *@
+@* Html
+@* ------------------------------------------------------------------------------------------------------------------ *@
+<li class="mb-2">
+    <a href="@Link" class="items-center flex @CenterIfCollapsed">
+        @if (LucideIcon is not null) {
+            <LucideIcon Class="@IconSize" Name="@LucideIcon"/>
+        }
+        <span class="@HideIfCollapsed ml-2 align-middle">@Name</span>
+    </a>
+</li>
+
+@* ------------------------------------------------------------------------------------------------------------------ *@
+@* Code
+@* ------------------------------------------------------------------------------------------------------------------ *@
+@code {
+    [CascadingParameter] public bool IsCollapsed { get; set; }
+    [Parameter] public string Name { get; set; } = string.Empty;
+    [Parameter] public string Link { get; set; } = "#";
+    [Parameter] public string? LucideIcon { get; set; } = null;
+    [Parameter] public string IconSize { get; set; } = "size-8";
+
+    private string CenterIfCollapsed => IsCollapsed ? "justify-center" : string.Empty;
+    private string HideIfCollapsed => IsCollapsed ? "hidden" : string.Empty;
+}

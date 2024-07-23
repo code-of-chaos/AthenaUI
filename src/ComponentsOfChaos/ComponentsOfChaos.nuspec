@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <!-- Required -->
+    <id>ComponentsOfChaos</id>
+    <version>0.1.0</version>
+    <description>A Blazor Component Library</description>
+    <authors>AndreasSasDev</authors>
+
+    <!-- Optional -->
+    <projectUrl>https://github.com/code-of-chaos/components_of_chaos-cs</projectUrl>
+    <license type="expression">GPL-3.0-or-later</license>
+    <icon>assets\icon.png</icon>
+    <readme>docs\README.md</readme>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <repository type="git" url="https://github.com/code-of-chaos/components_of_chaos-cs" />
+
+    <!-- Dependencies -->
+    <dependencies>
+      <group targetFramework="net8.0">
+        <dependency id="CodeOfChaos.Lucide" version="0.414.0" />
+        <dependency id="Microsoft.AspNetCore.Components.Web" version="8.0.7"/>
+      </group>
+    </dependencies>
+  </metadata>
+
+  <files>
+    <!-- Libraries -->
+    <file src="bin\Release\net8.0\ComponentsOfChaos.dll" target="lib\net8.0\ComponentsOfChaos.dll" />
+    <file src="bin\Release\net8.0\ComponentsOfChaos.pdb" target="lib\net8.0\ComponentsOfChaos.pdb" />
+
+    <!-- Assets -->
+    <file src="wwwroot\**" target="staticwebassets"/>
+    <file src="..\..\tailwind.config.js" target="staticwebassets\tailwind.config.js"/>
+    <file src="..\..\assets\nuget_package-icon.png" target="assets\icon.png"/>
+    <file src="README.md" target="docs\README.md"/>
+  </files>
+
+</package>

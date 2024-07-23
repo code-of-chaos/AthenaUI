@@ -1,0 +1,55 @@
+﻿@* ------------------------------------------------------------------------------------------------------------------ *@
+@* Imports
+@* ------------------------------------------------------------------------------------------------------------------ *@
+
+@* ------------------------------------------------------------------------------------------------------------------ *@
+@* Descriptors
+@* ------------------------------------------------------------------------------------------------------------------ *@
+@namespace ComponentsOfChaos
+@inherits ComponentBase;
+@* ------------------------------------------------------------------------------------------------------------------ *@
+@* Html
+@* ------------------------------------------------------------------------------------------------------------------ *@
+<CascadingValue Value="IsCollapsed">
+    <aside class="@ChangeWidthWhenCollapsed h-full p-4 transition-all duration-300 ease-in-out flex flex-col @Class">
+        <div class="@JustifyCenterWhenCollapsed w-full flex flex-row flex-nowrap items-center">
+            @if(Header is not null ) @Header
+            
+            <button @onclick="ToggleSidebar" class="p-2 focus:outline-none">
+                <LucideIcon Class="size-8" Name="@IconName"/>
+            </button>
+        </div>
+
+        <nav class="mt-4 flex flex-grow flex-col">
+            <ul>
+                @if (ItemsTop is not null)  @ItemsTop
+            </ul>
+
+            <ul class="mt-auto">
+                @if (ItemsBottom is not null) @ItemsBottom
+            </ul>
+        </nav>
+    </aside>
+</CascadingValue>
+
+@* ------------------------------------------------------------------------------------------------------------------ *@
+@* Code
+@* ------------------------------------------------------------------------------------------------------------------ *@
+@code {
+    [Parameter] public RenderFragment? Header { get; set; }
+    [Parameter] public RenderFragment? ItemsTop { get; set; }
+    [Parameter] public RenderFragment? ItemsBottom { get; set; }
+    [Parameter] public string? Class { get; set; }
+    public bool IsCollapsed { get; set; }
+    
+    private string IconName => IsCollapsed ? LucideIconNames.ListFilter : LucideIconNames.LogOut;
+    private string ChangeWidthWhenCollapsed => IsCollapsed ? "w-20" : "w-80";
+    private string JustifyCenterWhenCollapsed => IsCollapsed ? "justify-center" : "justify-end";
+    
+    // -----------------------------------------------------------------------------------------------------------------
+    // Methods
+    // -----------------------------------------------------------------------------------------------------------------
+    private void ToggleSidebar() {
+        IsCollapsed = !IsCollapsed;
+    }
+}
